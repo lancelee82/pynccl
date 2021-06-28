@@ -102,8 +102,8 @@ def gpu_worker_proc_7_1(kn, rank, gpu_i, q):
     r_arr = d_arr_recv.cpu().numpy()
     time.sleep(rank)
     print(rank, 'r_arr', r_arr)
-    #print(rank, w.numpy() == r_arr)
-    print(rank, (w.numpy() - r_arr) < 1e-6)
+    #print(rank, w.cpu().numpy() == r_arr)
+    print(rank, (w.cpu().numpy() - r_arr) < 1e-6)
 
     # -------------------------------------
 
